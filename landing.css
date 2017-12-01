@@ -4,7 +4,7 @@ body {
 .jumbotron {
     background-color: rgba(200, 54, 54, 0.5);
     padding-top:20px;
-    padding-bottom:20px;
+    padding-bottom:100px;
   }
 
 #landing-header {
