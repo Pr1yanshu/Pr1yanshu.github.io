@@ -3,7 +3,7 @@ body {
 }
 
 .jumbotron {
-    background-color: transparent;
+    opacity: 0.5;
     padding-top:20px;
     padding-bottom:20px;
   }
