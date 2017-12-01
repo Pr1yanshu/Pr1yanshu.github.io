@@ -2,7 +2,8 @@ body {
   background-color: #000;
 }
 .jumbotron {
-    background-color: rgba(200, 54, 54, 0.5);
+
+    background-color: transparent;
     padding-top:20px;
     padding-bottom:100px;
   }
@@ -15,6 +16,9 @@ body {
 }
 
 #landing-header h1 {
+  color: #fff;
+}
+#landing-header a {
   color: #fff;
 }
 
