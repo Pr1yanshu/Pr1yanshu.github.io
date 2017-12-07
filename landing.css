@@ -73,9 +73,9 @@ p {
   background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
   animation-delay: 28s; 
 }
-.slideshow li:nth-child(5) { 
+.slideshow li:nth-child(6) { 
   background-image: url(http://i.imgur.com/QmFEKSu.png);
-  animation-delay: 28s; 
+  animation-delay: 35s; 
 }
 
 @keyframes imageAnimation { 
