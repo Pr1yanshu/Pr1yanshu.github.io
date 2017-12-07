@@ -22,6 +22,9 @@ body {
 #landing-header p {
   color: #fff;
 }
+p {
+  font-size: 40px;
+}
 
 .slideshow { 
   position: fixed;
