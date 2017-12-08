@@ -4,7 +4,7 @@ body {
 .jumbotron {
 
     background-color: transparent;
-    padding: 5em inherit;
+    min-height: 300px;
   }
 
 #landing-header {
