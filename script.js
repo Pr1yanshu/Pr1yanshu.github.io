@@ -47,6 +47,46 @@ const statObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.6 });
 document.querySelectorAll('.stat__num').forEach(el => statObs.observe(el));
 
+// ===== Scroll progress bar =====
+const progress = document.getElementById('progress');
+const onProgress = () => {
+  const h = document.documentElement;
+  const max = h.scrollHeight - h.clientHeight;
+  progress.style.width = `${max > 0 ? (h.scrollTop / max) * 100 : 0}%`;
+};
+onProgress();
+window.addEventListener('scroll', onProgress, { passive: true });
+
+// ===== Back to top =====
+const totop = document.getElementById('totop');
+const onTop = () => totop.classList.toggle('show', window.scrollY > 600);
+onTop();
+window.addEventListener('scroll', onTop, { passive: true });
+totop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ===== Typing effect (hero role) =====
+const typedEl = document.getElementById('typed');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (typedEl && !reduceMotion) {
+  const phrases = [
+    'Senior Software Engineer',
+    'Distributed-systems builder',
+    'AI-integrated backend dev',
+    'Go & Kotlin enthusiast'
+  ];
+  let pi = 0, ci = phrases[0].length, deleting = true;
+  const tick = () => {
+    const word = phrases[pi];
+    typedEl.textContent = word.slice(0, ci);
+    let delay = deleting ? 34 : 62;
+    if (!deleting && ci === word.length) { delay = 2600; deleting = true; }
+    else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 350; }
+    ci += deleting ? -1 : 1;
+    setTimeout(tick, delay);
+  };
+  setTimeout(tick, 2200); // let the hero settle first
+}
+
 // ===== Project card spotlight =====
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('pointermove', (e) => {

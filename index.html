@@ -17,9 +17,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128187;</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0d12%22/><text x=%2250%22 y=%2272%22 font-size=%2264%22 font-weight=%22800%22 font-family=%22Arial%22 fill=%22%2335e0a1%22 text-anchor=%22middle%22>P.</text></svg>">
 </head>
 <body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <!-- ===== NAV ===== -->
   <header class="nav" id="nav">
@@ -43,9 +44,10 @@
       <div class="hero__glow hero__glow--2"></div>
     </div>
     <div class="container hero__inner">
+      <div class="hero__text">
       <p class="hero__eyebrow reveal"><span class="dot"></span> Available for interesting problems</p>
       <h1 class="hero__title reveal">Priyanshu Gautam</h1>
-      <p class="hero__role reveal"><span class="mono">&gt;</span> Senior Software Engineer</p>
+      <p class="hero__role reveal"><span class="mono">&gt;</span> <span id="typed">Senior Software Engineer</span><span class="caret" aria-hidden="true"></span></p>
       <p class="hero__lead reveal">
         I build <strong>high-scale backend systems</strong> in Go — distributed micro-services,
         event pipelines and low-latency infrastructure that process millions of events.
@@ -71,9 +73,38 @@
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
         </a>
       </div>
+      </div><!-- /hero__text -->
+
+      <aside class="term reveal" aria-hidden="true">
+        <div class="term__bar">
+          <span class="term__dot term__dot--r"></span>
+          <span class="term__dot term__dot--y"></span>
+          <span class="term__dot term__dot--g"></span>
+          <span class="term__title">priyanshu@prod ~ zsh</span>
+        </div>
+        <div class="term__body">
+          <p><span class="term__prompt">$</span> whoami</p>
+          <p class="term__out">backend engineer · scale &amp; AI</p>
+          <p><span class="term__prompt">$</span> cat stack.yaml</p>
+          <p class="term__out"><span class="term__key">lang:</span>  [go, kotlin, java]</p>
+          <p class="term__out"><span class="term__key">infra:</span> [kafka, grpc, redis]</p>
+          <p class="term__out"><span class="term__key">ai:</span>    [llms, prompts, plugins]</p>
+          <p><span class="term__prompt">$</span> uptime --career</p>
+          <p class="term__out">7+ years in production, 0 fear of monoliths</p>
+          <p><span class="term__prompt">$</span> <span class="term__cursor"></span></p>
+        </div>
+      </aside>
     </div>
     <a href="#about" class="hero__scroll" aria-label="Scroll down"><span></span></a>
   </section>
+
+  <!-- ===== TECH MARQUEE ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Golang</span><i>◆</i><span>Kotlin</span><i>◆</i><span>Kafka</span><i>◆</i><span>gRPC</span><i>◆</i><span>Protobuf</span><i>◆</i><span>Micro-services</span><i>◆</i><span>LLMs</span><i>◆</i><span>Prompt Engineering</span><i>◆</i><span>Redis</span><i>◆</i><span>MongoDB</span><i>◆</i><span>Docker</span><i>◆</i><span>CI/CD</span><i>◆</i>
+      <span>Golang</span><i>◆</i><span>Kotlin</span><i>◆</i><span>Kafka</span><i>◆</i><span>gRPC</span><i>◆</i><span>Protobuf</span><i>◆</i><span>Micro-services</span><i>◆</i><span>LLMs</span><i>◆</i><span>Prompt Engineering</span><i>◆</i><span>Redis</span><i>◆</i><span>MongoDB</span><i>◆</i><span>Docker</span><i>◆</i><span>CI/CD</span><i>◆</i>
+    </div>
+  </div>
 
   <!-- ===== STATS ===== -->
   <section class="stats">
@@ -274,6 +305,10 @@
       <p>© <span id="year"></span> Priyanshu Gautam · Gurugram, India · Built with Go-fuelled coffee ☕</p>
     </footer>
   </section>
+
+  <button class="totop" id="totop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
