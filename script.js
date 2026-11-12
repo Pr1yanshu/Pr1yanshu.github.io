@@ -72,7 +72,7 @@ if (typedEl && !reduceMotion) {
     'Senior Software Engineer',
     'Distributed-systems builder',
     'AI-integrated backend dev',
-    'Golang enthusiast'
+    'Polyglot backend engineer'
   ];
   let pi = 0, ci = phrases[0].length, deleting = true;
   const tick = () => {
